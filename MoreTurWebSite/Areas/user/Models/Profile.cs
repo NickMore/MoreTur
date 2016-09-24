@@ -1,4 +1,4 @@
-namespace MoreTurWebSite.Models
+namespace MoreTurWebSite.Areas.user.Models
 {
     using System;
     using System.Collections.Generic;

@@ -1,14 +1,14 @@
-namespace MoreTurWebSite.Models
+namespace MoreTurWebSite.Areas.user.Models
 {
     using System;
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class ProfileModel : DbContext
+    public partial class UserModel : DbContext
     {
-        public ProfileModel()
-            : base("name=DefaultConnection")
+        public UserModel()
+            : base("name=MoreTurDB")
         {
         }
 

@@ -6,21 +6,21 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using MoreTurWebSite.Models;
+using MoreTurWebSite.Areas.user.Models;
 
-namespace MoreTurWebSite.Controllers
+namespace MoreTurWebSite.Areas.user.Controllers
 {
     public class ProfilesController : Controller
     {
-        private ProfileModel db = new ProfileModel();
+        private UserModel db = new UserModel();
 
-        // GET: Profiles
+        // GET: user/Profiles
         public ActionResult Index()
         {
             return View(db.Profiles.ToList());
         }
 
-        // GET: Profiles/Details/5
+        // GET: user/Profiles/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -35,13 +35,13 @@ namespace MoreTurWebSite.Controllers
             return View(profile);
         }
 
-        // GET: Profiles/Create
+        // GET: user/Profiles/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Profiles/Create
+        // POST: user/Profiles/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -58,7 +58,7 @@ namespace MoreTurWebSite.Controllers
             return View(profile);
         }
 
-        // GET: Profiles/Edit/5
+        // GET: user/Profiles/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -73,7 +73,7 @@ namespace MoreTurWebSite.Controllers
             return View(profile);
         }
 
-        // POST: Profiles/Edit/5
+        // POST: user/Profiles/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -89,7 +89,7 @@ namespace MoreTurWebSite.Controllers
             return View(profile);
         }
 
-        // GET: Profiles/Delete/5
+        // GET: user/Profiles/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -104,7 +104,7 @@ namespace MoreTurWebSite.Controllers
             return View(profile);
         }
 
-        // POST: Profiles/Delete/5
+        // POST: user/Profiles/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

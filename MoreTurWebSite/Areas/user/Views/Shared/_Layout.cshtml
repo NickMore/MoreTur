@@ -6,7 +6,6 @@
     <title>@ViewBag.Title - MoreTur</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -17,24 +16,20 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("MoreTur", "Index", "Home", null, new { @class = "navbar-brand" })
+                @Html.ActionLink("MoreTur", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    @*<li>@Html.ActionLink("Profile", "Index", "Profiles", new { area = "user" }, null)</li>*@
-
-                    @if (Request.IsAuthenticated && User.IsInRole("Admin")) {
-                        <li>@Html.ActionLink("RolesAdmin", "Index", "RolesAdmin")</li>
-                        <li>@Html.ActionLink("UsersAdmin", "Index", "UsersAdmin")</li>
-                    }
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                    </li>   
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
+
+                        
         </div>
     </div>
+
     <div class="container body-content">
         @RenderBody()
         <hr />
