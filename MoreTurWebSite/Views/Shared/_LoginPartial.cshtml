@@ -7,6 +7,17 @@
             @*<li>
                 @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
             </li>*@
+            @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+            {
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Админка<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <!-- links -->
+                    <li>@Html.ActionLink("RolesAdmin", "Index", "RolesAdmin", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("UsersAdmin", "Index", "UsersAdmin", new { area = "" }, null)</li>                    
+                </ul>
+            </li>
+            }
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">@User.Identity.GetUserName()<b class="caret"></b></a>
                 <ul class="dropdown-menu">
@@ -15,7 +26,7 @@
                     <li>@Html.ActionLink("Мои поездки", "Index", "Reserves", new { area = "user" }, null)</li>
                     <li>@Html.ActionLink("Сообщения", "Index", "Messagies", new { area = "user" }, null)</li>
                     <li>@Html.ActionLink("Мои объявления", "Index", "Objects", new { area = "user" }, null)</li>
-                    <li>@Html.ActionLink("Настройки", "Index", "Settings", new { area = "user" }, null)</li>
+                    <li>@Html.ActionLink("Настройки", "Index", "Manage", new { area = "" }, null)</li>
                     <li>@Html.ActionLink("Избранное", "Index", "Favorites", new { area = "user" }, null)</li>
                     <li><a href="javascript:document.getElementById('logoutForm').submit()">Выход</a></li>
                 </ul>
